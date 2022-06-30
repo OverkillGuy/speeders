@@ -1,0 +1,54 @@
+[tool.poetry]
+name = "plates"
+version = "0.1.0"
+description = "Toy repo for Python solving Stackoverflow problem"
+authors = ["Jb Doyon <jb@jiby.tech>"]
+license = "GPL-3.0-or-later"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+# While I wouldn't mind using Python 3.11 onwards, I only have 3.9 here
+python = ">=3.9,<4"
+# This project doesn't have runtime dependencies, just standard library.
+
+[tool.poetry.scripts]
+plates = "plates.plates:main"
+
+# Note that I'm quite lax with version pinning:
+# I don't really _want_ to pin specific versions here, because apart from "good
+# enough for current features", I don't have incompatibilities, and am happy to
+# pick up new versions. Remember that because we committed poetry.lock file, we
+# have exact versions of dependencies locked, so the below is just our
+# "intentions" regarding versions.
+[tool.poetry.dev-dependencies]
+pytest = ">=6.1.2"
+pytest-cov = ">=3.0.0"
+pytest-clarity = ">=1.0.1"
+# Note: linters etc are not defined here, but in .pre-commit-config.yaml
+# The "pre-commit" tool will install/manage each in its isolated virtualenv
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+# Make isort work with Black
+# Avoids conflicting imports
+# As per https://pycqa.github.io/isort/docs/configuration/black_compatibility/#using-a-config-file-such-as-isortcfg
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+# Set the flags we're using most of the time, to make "poetry run pytest"
+# do the right thing right away
+[tool.pytest.ini_options]
+addopts = """-vv \
+    --doctest-modules \
+    --color=yes \
+    --junit-xml=test_results/results.xml
+    --cov=plates \
+    --cov-report=xml:test_results/coverage.xml \
+    --cov-report=html:test_results/coverage.html \
+    --cov-report=term"""
+
+# Don't let conf.py and other irrelevant folders be detectable as tests by pytest
+norecursedirs = ".git build"
