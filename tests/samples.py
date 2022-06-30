@@ -1,0 +1,35 @@
+"""Reference inputs used multiple times for testing purposes"""
+
+from datetime import time
+
+SAMPLE1_SPEEDLIMIT = 50
+SAMPLE1_EVENT1_PLATE = "OZ-15-ZU"
+SAMPLE1_EVENT1_DETECTORID = 1
+SAMPLE1_EVENT1_TIME = time(hour=9, minute=0, second=0)
+SAMPLE1_TOOFAST1_PLATE = "GH-23-NN"
+SAMPLE1_TOOFAST1_SPEED = 68
+SAMPLE1_INPUT = """50
+    1 09:00:00 OZ-15-ZU
+    2 09:00:04 WS-LP-74
+    1 09:00:07 97-YC-51
+    1 09:00:10 NV-71-PU
+    2 09:00:21 OZ-15-ZU
+    2 09:04:58 CN-70-OT
+"""
+
+SAMPLE_SPEEDLIMIT2 = 50
+SAMPLE_PLATE2 = "QW-23-56"
+SAMPLE_INPUT2 = """50
+    1 12:00:33 QW-23-56
+    1 12:01:39 GF-PY-26
+    2 12:00:43 QW-23-56
+    1 12:00:46 02-RV-WE
+    2 12:00:59 02-RV-WE
+    2 12:01:56 GF-PY-26
+    1 12:01:15 CF-QW-46
+    2 12:02:13 WM-20-PF
+    2 12:01:27 CF-QW-46
+    1 12:01:28 03-LC-TF
+    2 12:01:39 03-LC-TF
+    1 12:01:56 WM-20-PF
+"""
