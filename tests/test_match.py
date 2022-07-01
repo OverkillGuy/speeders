@@ -1,6 +1,6 @@
 """Prove we can match events by plate, to find speed"""
 
-from plates.match import _platematch_events, match_events
+from speeders.match import _platematch_events, match_events
 from tests.samples import SAMPLE1_EVENT1_PLATE, SAMPLE1_OBJ, SAMPLE1_SINGLEHIT1_PLATE
 
 

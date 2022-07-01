@@ -7,6 +7,7 @@ from datetime import time
 # TODO Consider a more specific type for validating plates aren't Emoji, empty...
 Plate = str
 
+
 @dataclass
 class PlateDetectionEvent:
     """A single detector's event in time, without context"""

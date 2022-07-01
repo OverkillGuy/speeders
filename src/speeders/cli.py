@@ -2,7 +2,7 @@
 import argparse
 import sys
 
-from plates.main import compute_too_fast
+from speeders.main import compute_too_fast
 
 
 def parse_arguments(arguments: list[str]) -> argparse.Namespace:

@@ -2,7 +2,7 @@
 
 from datetime import date, datetime, timedelta
 
-from plates.match import DetectionMatches, Plate
+from speeders.match import DetectionMatches, Plate
 
 # TODO Consider a type alias that allows annotating units, like TypeVar
 Speed = float

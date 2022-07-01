@@ -2,7 +2,7 @@
 
 from datetime import time
 
-from plates.model import PlateDetectionEvent, PlateDetections
+from speeders.model import PlateDetectionEvent, PlateDetections
 
 SAMPLE1_SPEEDLIMIT = 50
 SAMPLE1_EVENT1_PLATE = "OZ-15-ZU"

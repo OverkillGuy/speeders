@@ -1,7 +1,7 @@
 """Tests for parsing an input file"""
 
 
-from plates.model import PlateDetections
+from speeders.model import PlateDetections
 from tests.samples import (
     SAMPLE1_EVENT1_DETECTORID,
     SAMPLE1_EVENT1_PLATE,

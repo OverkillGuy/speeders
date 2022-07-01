@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "plates"
+name = "speeders"
 version = "0.1.0"
-description = "Toy repo for Python solving Stackoverflow problem"
+description = "Detect speeders from distance-over-time of plate detectors"
 authors = ["Jb Doyon <jb@jiby.tech>"]
 license = "GPL-3.0-or-later"
 readme = "README.md"
@@ -12,7 +12,7 @@ python = ">=3.9,<4"
 # This project doesn't have runtime dependencies, just standard library.
 
 [tool.poetry.scripts]
-speeders = "plates.cli:main"
+speeders = "speeders.cli:main"
 
 # Note that I'm quite lax with version pinning:
 # I don't really _want_ to pin specific versions here, because apart from "good
@@ -45,10 +45,10 @@ addopts = """-vv \
     --doctest-modules \
     --color=yes \
     --junit-xml=test_results/results.xml
-    --cov=plates \
+    --cov=speeders \
     --cov-report=xml:test_results/coverage.xml \
     --cov-report=html:test_results/coverage.html \
     --cov-report=term"""
 
-# Don't let conf.py and other irrelevant folders be detectable as tests by pytest
+# Don't let irrelevant folders be detectable as tests by pytest
 norecursedirs = ".git build"

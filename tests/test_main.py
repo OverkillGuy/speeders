@@ -1,6 +1,6 @@
 """Find the speeders, given input"""
 
-from plates.cli import compute_too_fast
+from speeders.cli import compute_too_fast
 from tests.samples import SAMPLE1_INPUT, SAMPLE2_INPUT
 
 

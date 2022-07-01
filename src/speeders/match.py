@@ -1,8 +1,8 @@
-"""Solve plates"""
+"""Solve speeders"""
 
 from collections import defaultdict
 
-from plates.model import Plate, PlateDetectionEvent, PlateDetections
+from speeders.model import Plate, PlateDetectionEvent, PlateDetections
 
 # Type alias
 DetectionMatches = dict[Plate, list[PlateDetectionEvent]]

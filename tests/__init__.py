@@ -1,4 +1,4 @@
-"""Tests for plates.
+"""Tests for speeders.
 
 By having this init file here, we declare the local folder as a python module. This
 allows imports as the folder's name = "tests".

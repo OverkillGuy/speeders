@@ -1,14 +1,14 @@
-# Plates experiment
+# Speeders
 
-Solving a fun StackOverflow problem in Python
+Detect cars going over the limit by time differences in plate detectors.
 
-
+Solves a fun StackOverflow problem in Python.
 
 ## Dependencies
 
 - [Python](https://www.python.org/) 3.9 or later (use of typing hints)
 - [Poetry](https://python-poetry.org) package manager, to install development
-  dependencies and generate virtual environment.
+  dependencies and generate virtual environment. No actual runtime dependency.
 
 ## Usage
 
@@ -102,7 +102,7 @@ Output:
 
 Note from implementor: the distance between detector plates is NOT stipulated,
 which is required to capture speed as distance over time. Sample implementation
-shows this to be `200`.
+shows this to be `200` meters.
 
 ## Development
 
