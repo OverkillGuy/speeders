@@ -16,14 +16,15 @@ def test_parse_simple():
     """Parse the sample plates input"""
     parsed = parse(SAMPLE1_INPUT)
     assert parsed.reference_speed == SAMPLE1_SPEEDLIMIT, "Wrong parsed speed limit"
+    first_event = parsed.events[0]
     assert (
-        parsed.events[0].plate == SAMPLE1_EVENT1_PLATE
+        first_event.plate == SAMPLE1_EVENT1_PLATE
     ), "Wrong plates detected in first event"
     assert (
-        parsed.events[0].detector_id == SAMPLE1_EVENT1_DETECTORID
+        first_event.detector_id == SAMPLE1_EVENT1_DETECTORID
     ), "Wrong detector ID reported in first event"
     assert (
-        parsed.events[0].time == SAMPLE1_EVENT1_TIME
+        first_event.timestamp == SAMPLE1_EVENT1_TIME
     ), "Wrong timestamp parsed in first event"
     all_plates = [event.plate for event in parsed.events]
     assert SAMPLE1_TOOFAST1_PLATE in all_plates, "Missing plate from parsed"
