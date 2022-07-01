@@ -1,7 +1,7 @@
 """Tests for parsing an input file"""
 
 
-from plates.parser import parse
+from plates.parser import PlateDetections
 from tests.samples import (
     SAMPLE1_EVENT1_DETECTORID,
     SAMPLE1_EVENT1_PLATE,
@@ -14,7 +14,7 @@ from tests.samples import (
 
 def test_parse_simple():
     """Parse the sample plates input"""
-    parsed = parse(SAMPLE1_INPUT)
+    parsed: PlateDetections = PlateDetections.parse(SAMPLE1_INPUT)
     assert parsed.reference_speed == SAMPLE1_SPEEDLIMIT, "Wrong parsed speed limit"
     first_event = parsed.events[0]
     assert (

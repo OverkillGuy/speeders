@@ -24,18 +24,18 @@ class PlateDetections:
     # Note the missing info of detector ID vs distances, preventing proper
     # distance-over-time computation.
 
-
-def parse(input_text: str) -> PlateDetections:
-    """Parse an input problem text into (un-interpreted) structured objects"""
-    # TODO Consider what happens in case first line DOESN'T parse as number
-    first_line, *rest_lines = input_text.split("\n")
-    reference_speed = int(first_line)
-    events: list[PlateDetectionEvent] = []
-    for line in rest_lines:
-        detector, time_string, plate = line.split(" ")
-        time_obj = time.fromisoformat(time_string)
-        event = PlateDetectionEvent(
-            detector_id=int(detector), plate=plate, timestamp=time_obj
-        )
-        events.append(event)
-    return PlateDetections(reference_speed=reference_speed, events=events)
+    @staticmethod
+    def parse(input_text: str):
+        """Parse an input problem text into (un-interpreted) structured objects"""
+        # TODO Consider what happens in case first line DOESN'T parse as number
+        first_line, *rest_lines = input_text.split("\n")
+        reference_speed = int(first_line)
+        events: list[PlateDetectionEvent] = []
+        for line in rest_lines:
+            detector, time_string, plate = line.split(" ")
+            time_obj = time.fromisoformat(time_string)
+            event = PlateDetectionEvent(
+                detector_id=int(detector), plate=plate, timestamp=time_obj
+            )
+            events.append(event)
+        return PlateDetections(reference_speed=reference_speed, events=events)
