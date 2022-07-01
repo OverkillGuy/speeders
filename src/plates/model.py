@@ -7,7 +7,6 @@ from datetime import time
 # TODO Consider a more specific type for validating plates aren't Emoji, empty...
 Plate = str
 
-
 @dataclass
 class PlateDetectionEvent:
     """A single detector's event in time, without context"""
@@ -31,7 +30,7 @@ class PlateDetections:
     def parse(input_text: str):
         """Parse an input problem text into (un-interpreted) structured objects"""
         # TODO Consider what happens in case first line DOESN'T parse as number
-        first_line, *rest_lines = input_text.split("\n")
+        first_line, *rest_lines = input_text.strip().split("\n")
         reference_speed = int(first_line)
         events: list[PlateDetectionEvent] = []
         for line in rest_lines:

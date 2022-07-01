@@ -12,7 +12,7 @@ python = ">=3.9,<4"
 # This project doesn't have runtime dependencies, just standard library.
 
 [tool.poetry.scripts]
-plates = "plates.plates:main"
+speeders = "plates.cli:main"
 
 # Note that I'm quite lax with version pinning:
 # I don't really _want_ to pin specific versions here, because apart from "good

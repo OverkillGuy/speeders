@@ -3,7 +3,53 @@
 Solving a fun StackOverflow problem in Python
 
 
-## Problem statement
+
+## Dependencies
+
+- [Python](https://www.python.org/) 3.9 or later (use of typing hints)
+- [Poetry](https://python-poetry.org) package manager, to install development
+  dependencies and generate virtual environment.
+
+## Usage
+
+### Run the code
+
+Install the module first:
+
+    make install
+    # or
+	poetry install
+
+Then inside the virtual environment, launch the script:
+
+    # Run single command inside virtualenv
+    poetry run speeders -f input_2.txt
+
+    # or
+    # Load the virtualenv first
+    poetry shell
+    # Then launch the script, staying in virtualenv
+    speeders -f input_2.txt
+
+Sample output:
+
+    The following 4 cars went over the speed limit:
+    QW-23-56 - 72 km/h
+    02-RV-WE - 55 km/h
+    CF-QW-46 - 60 km/h
+    03-LC-TF - 65 km/h
+
+
+### Reuse the python module
+
+Use this package as you would any python module:
+
+	# Get a virtualenv going first, such as via poetry
+	poetry shell
+	python3
+	>>> from plates import match
+
+## Original problem statement
 
 
 See [the original problem on Stack Overflow](https://codereview.stackexchange.com/questions/277750/print-a-list-of-license-plate-numbers-of-all-cars-that-went-over-the-speed-limit).
@@ -57,43 +103,6 @@ Output:
 Note from implementor: the distance between detector plates is NOT stipulated,
 which is required to capture speed as distance over time. Sample implementation
 shows this to be `200`.
-
-## Dependencies
-
-- [Python](https://www.python.org/) 3.9 or later (use of typing hints)
-- [Poetry](https://python-poetry.org) package manager, to install development
-  dependencies and generate virtual environment.
-
-## Usage
-
-### Play the code
-
-Install the module first:
-
-    make install
-    # or
-	poetry install
-
-Then inside the virtual environment, launch the script:
-
-    # Run single game inside virtualenv
-    poetry run plates
-
-    # or
-    # Load the virtualenv first
-    poetry shell
-    # Then launch the script, staying in virtualenv
-    plates
-
-### Reuse the python module
-
-Use this package as you would any python module:
-
-	# Get a virtualenv going first, such as via poetry
-	poetry shell
-	python3
-	>>> from plates import detect
-
 
 ## Development
 
