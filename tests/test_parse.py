@@ -1,12 +1,13 @@
 """Tests for parsing an input file"""
 
 
-from plates.parser import PlateDetections
+from plates.model import PlateDetections
 from tests.samples import (
     SAMPLE1_EVENT1_DETECTORID,
     SAMPLE1_EVENT1_PLATE,
     SAMPLE1_EVENT1_TIME,
     SAMPLE1_INPUT,
+    SAMPLE1_OBJ,
     SAMPLE1_SPEEDLIMIT,
     SAMPLE1_TOOFAST1_PLATE,
 )
@@ -28,3 +29,4 @@ def test_parse_simple():
     ), "Wrong timestamp parsed in first event"
     all_plates = [event.plate for event in parsed.events]
     assert SAMPLE1_TOOFAST1_PLATE in all_plates, "Missing plate from parsed"
+    assert parsed == SAMPLE1_OBJ, "Incorrect parsed object representation"

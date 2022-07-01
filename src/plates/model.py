@@ -3,14 +3,17 @@
 from dataclasses import dataclass
 from datetime import time
 
+# Declaring a type alias for strings that happen to be plates
+# TODO Consider a more specific type for validating plates aren't Emoji, empty...
+Plate = str
+
 
 @dataclass
 class PlateDetectionEvent:
     """A single detector's event in time, without context"""
 
     detector_id: int
-    # TODO Consider a more specific type for validating plates aren't Emoji or empty
-    plate: str
+    plate: Plate
     # Per input file samples, note the lack of day details (can't use datetime).
     timestamp: time
 
@@ -21,7 +24,7 @@ class PlateDetections:
 
     reference_speed: int
     events: list[PlateDetectionEvent]
-    # Note the missing info of detector ID vs distances, preventing proper
+    # Note the missing info of detector ID and distances, preventing proper
     # distance-over-time computation.
 
     @staticmethod
